@@ -21,7 +21,7 @@ export const defaultSettingsState = {
   hideCot: false,
   isChatHistoryOpen: true,
   language: 'en-US',
-  theme
+  theme: theme
 };
 
 export const settingsState = atom<{
