@@ -54,7 +54,8 @@ export default function AppWrapper() {
       ...prev,
       defaultCollapseContent: data.ui.default_collapse_content ?? true,
       expandAll: !!data.ui.default_expand_messages,
-      hideCot: !!data.ui.hide_cot
+      hideCot: !!data.ui.hide_cot,
+      defaultMode: data.theme.default_mode ?? "system"
     }));
   }, [data, setProjectSettings, setAppSettings]);
 
