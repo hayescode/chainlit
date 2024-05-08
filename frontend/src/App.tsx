@@ -38,6 +38,7 @@ type ThemOverride = {
 declare global {
   interface Window {
     theme?: {
+      default_mode?: 'light' | 'dark' | 'system';
       light?: ThemOverride;
       dark?: ThemOverride;
     };
@@ -67,7 +68,10 @@ export function overrideTheme(theme: Theme) {
 }
 
 function App() {
-  const { theme: themeVariant } = useRecoilValue(settingsState);
+  let themeVariant = useRecoilValue(settingsState).theme;
+  if (themeVariant === 'system') {
+    themeVariant = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
   const pSettings = useRecoilValue(projectSettingsState);
   // @ts-expect-error custom property
   const fontFamily = window.theme?.font_family;

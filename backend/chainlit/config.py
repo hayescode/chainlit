@@ -4,7 +4,7 @@ import site
 import sys
 from importlib import util
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Callable, Dict, List, Optional, Union
+from typing import TYPE_CHECKING, Any, Callable, Dict, List, Optional, Union, Literal
 
 import tomli
 from chainlit.logger import logger
