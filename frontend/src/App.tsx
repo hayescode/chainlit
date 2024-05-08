@@ -38,6 +38,7 @@ type ThemOverride = {
 declare global {
   interface Window {
     theme?: {
+      default_mode?: 'light' | 'dark' | 'system';
       light?: ThemOverride;
       dark?: ThemOverride;
     };
