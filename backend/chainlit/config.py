@@ -135,6 +135,7 @@ hide_cot = false
 # Override default MUI light theme. (Check theme.ts)
 [UI.theme]
     #font_family = "Inter, sans-serif"
+    #default_mode = "dark" #"light", "dark", "system"
 [UI.theme.light]
     #background = "#FAFAFA"
     #paper = "#FFFFFF"
@@ -194,6 +195,7 @@ class Palette(DataClassJsonMixin):
 @dataclass()
 class Theme(DataClassJsonMixin):
     font_family: Optional[str] = None
+    default_mode: Optional[Literal["light", "dark", "system"]] = "system"
     light: Optional[Palette] = None
     dark: Optional[Palette] = None
 
