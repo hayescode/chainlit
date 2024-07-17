@@ -447,6 +447,7 @@ async def oauth_login(provider_id: str, request: Request):
 
 
 @router.get("/auth/oauth/{provider_id}/callback")
+@router.post("/auth/oauth/{provider_id}/callback")
 async def oauth_callback(
     provider_id: str,
     request: Request,
